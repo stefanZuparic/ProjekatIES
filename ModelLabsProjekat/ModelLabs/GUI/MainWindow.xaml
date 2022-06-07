@@ -1,0 +1,48 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="900">
+    <Grid>
+
+        <Grid Background="CadetBlue" Height="59" VerticalAlignment="Top" HorizontalAlignment="Left" Width="900">
+
+            <Button x:Name="ButtonGetValues" Background="Transparent" Content="GetValues" BorderThickness="0" FontSize="25" FontFamily="Cambria" HorizontalAlignment="Left" Margin="100,10,0,0" VerticalAlignment="Top" Width="201" Height="39" Click="Button_GetValues_Click"/>
+
+            <Button x:Name="ButtonGetExtentValues" Background="Transparent" Content="GetExtentValues" BorderThickness="0" FontSize="25" FontFamily="Cambria" HorizontalAlignment="Left" Margin="344,10,0,0" VerticalAlignment="Top" Width="201" Height="39" Click="Button_GetExtentValues_Click"/>
+
+            <Button x:Name="ButtonGetRelatedValues" Background="Transparent" Content="GetRelatedValues" BorderThickness="0" FontSize="25" FontFamily="Cambria" HorizontalAlignment="Left" Margin="598,10,0,0" VerticalAlignment="Top" Width="201" Height="39" Click="Button_GetRelatedValues_Click"/>
+
+        </Grid>
+
+        <TextBox TextAlignment="Center" FontSize="16" Background="CadetBlue" HorizontalAlignment="Left" FontFamily="Cambria" Height="51" Margin="1,61,0,0" TextWrapping="Wrap" 
+                 Text="GetValues služi za čitanje jednog resursa. Unosimo GID jednog resursa i listu ModelCode-ova svih property-ja koje želimo da pročitamo. Rezultat je ResourceDescription." VerticalAlignment="Top" Width="891" />
+
+        <ComboBox x:Name="GIDCombobox" HorizontalAlignment="Left" Height="30" Margin="31,146,0,0" VerticalAlignment="Top" Width="190" SelectionChanged="GIDCombobox_SelectionChanged"/>
+
+        <TextBox x:Name="ResultsTextBox" VerticalScrollBarVisibility="Visible" IsEnabled="True" Height="273" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="374,119,9.6,0"/>
+
+        <Grid x:Name="SelectPropertiesGrid" HorizontalAlignment="Left" Height="235" Margin="31,185,0,0" VerticalAlignment="Top" Width="338">
+            <CheckBox x:Name="SellectAllCheckBox" Visibility="Hidden" Click="SellectAllCheckBox_Click" Content="SelectAll" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" VerticalAlignment="Top" Width="81"/>
+            <CheckBox x:Name="Item1CheckBox" Visibility="Hidden" Content="Item" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="0,30,0,0" VerticalAlignment="Top" Width="146"/>
+            <CheckBox x:Name="Item2CheckBox" Visibility="Hidden" Content="Item" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="0,51,0,0" VerticalAlignment="Top" Width="156"/>
+            <CheckBox x:Name="Item3CheckBox" Visibility="Hidden" Content="Item" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="0,72,0,0" VerticalAlignment="Top" Width="181"/>
+            <CheckBox x:Name="Item4CheckBox" Visibility="Hidden" Content="Item1" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="0,93,0,0" VerticalAlignment="Top" Width="178"/>
+            <CheckBox x:Name="Item5CheckBox" Visibility="Hidden" Content="Item2" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="0,114,0,0" VerticalAlignment="Top" Width="178"/>
+            <CheckBox x:Name="Item6CheckBox" Visibility="Hidden" Content="Item3" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="0,135,0,0" VerticalAlignment="Top" Width="178"/>
+            <CheckBox x:Name="Item7CheckBox" Visibility="Hidden" Content="Item4" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="0,156,0,0" VerticalAlignment="Top" Width="178"/>
+            <CheckBox x:Name="Item8CheckBox" Visibility="Hidden" Content="Item5" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="0,177,0,0" VerticalAlignment="Top" Width="178"/>
+            <CheckBox x:Name="Item9CheckBox" Visibility="Hidden" Content="Item5" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="0,198,0,0" VerticalAlignment="Top" Width="178"/>
+
+        </Grid>
+
+        <Label Content="Choose GID:" HorizontalAlignment="Left" FontSize="14" FontFamily="Cambria" Margin="31,119,0,0" VerticalAlignment="Top" Width="162"/>
+
+        <Button x:Name="GetValuesButton" Click="GetValuesButton_Click" Content="GetValues" Visibility="Hidden" Background="CadetBlue" FontSize="17" FontFamily="Cambria" HorizontalAlignment="Left" Margin="243,146,0,0" VerticalAlignment="Top" Width="126" Height="30" RenderTransformOrigin="0.5,0.5" />
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,59 @@
+﻿<Window x:Class="GUI.GetRelatedValues"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="GetRelatedValues" Height="720" Width="900">
+    <Grid>
+        <Grid Background="CadetBlue" HorizontalAlignment="Left" Height="59" VerticalAlignment="Top" Width="892">
+            
+            <Button x:Name="ButtonGetValues" Background="Transparent" Content="GetValues" BorderThickness="0" FontSize="25" FontFamily="Cambria" HorizontalAlignment="Left" Margin="42,10,0,0" VerticalAlignment="Top" Width="201" Height="39" Click="ButtonGetValues_Click"/>
+            
+            <Button x:Name="ButtonGetExtentValues" Background="Transparent" Content="GetExtentValues" BorderThickness="0" FontSize="25" FontFamily="Cambria" HorizontalAlignment="Left" Margin="331,10,0,0" VerticalAlignment="Top" Width="201" Height="39" Click="ButtonGetExtentValues_Click"/>
+            
+            <Button x:Name="ButtonGetRelatedValues" Background="Transparent" Content="GetRelatedValues" BorderThickness="0" FontSize="25" FontFamily="Cambria" HorizontalAlignment="Right" Margin="0,10,48,0" VerticalAlignment="Top" Width="201" Height="39" Click="ButtonGetRelatedValues_Click"/>
+        
+        </Grid>
+
+        <TextBox TextAlignment="Center" FontSize="16" Background="CadetBlue" HorizontalAlignment="Left" FontFamily="Cambria" Height="78" Margin="10,64,0,0" TextWrapping="Wrap" 
+                 Text="GetRelatedValues služi za citanje referenciranog resursa. Unosimo GID resursa, ModelCode asocijacije, FIlter - DMSType za konkretan tip resursa koji zelimo da dobavimo(ili 0) i listu ModelCode-ova property-ja koje zelimo da dobavimo(ukoliko je filter odabran). Povratna vrednost je su ResourceDescription-i referenciranih resursa." VerticalAlignment="Top" Width="872" />
+
+        <ComboBox x:Name="GIDComboBox" HorizontalAlignment="Left" Height="30" Margin="10,163,0,0" VerticalAlignment="Top" Width="218" SelectionChanged="GIDComboBox_SelectionChanged"/>
+        
+        <Label Content="Choose GID:" HorizontalAlignment="Left" FontSize="14" FontFamily="Cambria" Margin="10,136,0,0" VerticalAlignment="Top" Width="162"/>
+        
+        <Button x:Name="GetRelatedValuesButton" Click="GetRelatedValuesButton_Click" Content="GetRelatedValues" Visibility="Hidden" Background="CadetBlue" FontSize="17" FontFamily="Cambria" HorizontalAlignment="Left" Margin="217,237,0,0" VerticalAlignment="Top" Width="151" Height="29" RenderTransformOrigin="0.5,0.5" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90.0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        
+        
+        <ComboBox x:Name="AssociationComboBox" HorizontalAlignment="Left" Height="30" Margin="10,225,0,0" VerticalAlignment="Top" Width="218" SelectionChanged="AssociationComboBox_SelectionChanged"/>
+        <Label Content="Choose Association ModelCode:" HorizontalAlignment="Left" FontSize="14" FontFamily="Cambria" Margin="10,198,0,0" VerticalAlignment="Top" Width="218"/>
+        
+        <ComboBox x:Name="DMSTypeComboBox" HorizontalAlignment="Left" Height="30" Margin="10,293,0,0" VerticalAlignment="Top" Width="218" SelectionChanged="DMSTypeComboBox_SelectionChanged"/>
+        <Label Content="Choose concrete class DMSType:" HorizontalAlignment="Left" FontSize="14" FontFamily="Cambria" Margin="10,266,0,0" VerticalAlignment="Top" Width="218"/>
+        
+        <CheckBox x:Name="SelectAllCheckBox" Visibility="Hidden" FontSize="14" FontFamily="Cambria" Content="SelectAll" Click="SelectAllCheckBox_Click" HorizontalAlignment="Left" Height="22" Margin="10,342,0,0" VerticalAlignment="Top" Width="91"/>
+        <CheckBox x:Name="Item1CheckBox" Visibility="Hidden" Content="Item" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="10,369,0,0" VerticalAlignment="Top" Width="198"/>
+        <CheckBox x:Name="Item2CheckBox" Visibility="Hidden" Content="Item" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top" Width="212"/>
+        <CheckBox x:Name="Item3CheckBox" Visibility="Hidden" Content="Item" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="10,411,0,0" VerticalAlignment="Top" Width="246"/>
+        <CheckBox x:Name="Item4CheckBox" Visibility="Hidden" Content="Item1" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="10,432,0,0" VerticalAlignment="Top" Width="242"/>
+        <CheckBox x:Name="Item5CheckBox" Visibility="Hidden" Content="Item2" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="10,453,0,0" VerticalAlignment="Top" Width="242"/>
+        <CheckBox x:Name="Item6CheckBox" Visibility="Hidden" Content="Item3" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="10,474,0,0" VerticalAlignment="Top" Width="242"/>
+        <CheckBox x:Name="Item7CheckBox" Visibility="Hidden" Content="Item4" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="10,495,0,0" VerticalAlignment="Top" Width="242"/>
+        <CheckBox x:Name="Item8CheckBox" Visibility="Hidden" Content="Item5" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="10,516,0,0" VerticalAlignment="Top" Width="242"/>
+        <CheckBox x:Name="Item9CheckBox"  Visibility="Hidden" Content="Item6" FontSize="14" FontFamily="Cambria" HorizontalAlignment="Left" Margin="10,537,0,0" VerticalAlignment="Top" Width="242"/>
+
+        <TextBox x:Name="ResultsTextBox" VerticalScrollBarVisibility="Visible" IsEnabled="True" Height="521" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="352,159,31,0"/>
+
+    </Grid>
+</Window>
